@@ -23,7 +23,7 @@ unsigned long long calculatehashkey(string s){
 	int i = 0 , index;
     unsigned long long productkey = 1;
 	for(i = 0 ; i < s.length() ; i++){
-		index = s[i] - 'a';
+		index = s[i] - 'A';
 		productkey *= arr[index];
     }
 	return productkey;
@@ -34,7 +34,13 @@ void printAnagrams()
 {
 	for (map<unsigned long long, string>::iterator ii = Anagrams.begin(); ii != Anagrams.end(); ++ii)
 	{
-		cout << (*ii).second << endl;
+	    string s=(*ii).second;
+	    if(s.find(' ') != -1){
+
+		cout << s << endl;
+
+                }
+
 	}
 }
 
